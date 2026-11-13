@@ -2,8 +2,8 @@
 import { readFileText } from "@red-cup-engineering/computer-file-engineering-services-section/read-file";
 import { writeFileText } from "@red-cup-engineering/computer-file-engineering-services-section/write-file";
 import { confinePath } from "@red-cup-engineering/computer-filepath-engineering-services-section/filepath";
-import { argument } from "@red-cup-engineering/javascript-node-services-section/argv";
-import { isMain } from "@red-cup-engineering/javascript-file-services-section/javascript-file-main-guard";
+import { argument } from "@red-cup-engineering/javascript-node-engineering-services-section/argv";
+import { isMain } from "@red-cup-engineering/javascript-file-engineering-services-section/javascript-file-main-guard";
 import { findGlossaryTermMarkdownPaths, projectGlossaryIndex } from "@red-cup-engineering/term-engineering-services-section/glossary-index";
 import { censusGlossaryIndex } from "../src/glossary-census.mjs";
 
