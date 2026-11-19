@@ -25,12 +25,12 @@ export function censusGlossaryIndex(index, { date }) {
   const byRule = {}, byMessage = {}, schemes = {}, owners = {};
   const rows = [];
   let stubs = 0;
-  const carrier = (path, scheme, identity, admitted, rules) => {
+  const carrier = (path, scheme, identity, validated, rules) => {
     schemes[scheme] ??= { carriers: 0, admitted: 0 };
     schemes[scheme].carriers += 1;
-    if (admitted) schemes[scheme].admitted += 1;
+    if (validated) schemes[scheme].admitted += 1;
     (owners[identity] ??= new Set()).add(scheme);
-    rows.push([path, scheme, identity, admitted ? "1" : "0", rules.join(",")]);
+    rows.push([path, scheme, identity, validated ? "1" : "0", rules.join(",")]);
   };
   for (const record of index.records) carrier(record.path, schemeOf(record.path), record.identity, true, []);
   for (const { path, findings } of index.refused) {
